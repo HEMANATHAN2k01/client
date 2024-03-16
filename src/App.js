@@ -1,23 +1,26 @@
-import logo from './logo.svg';
-import './App.css';
+import { Adminpage } from "./screen/adminpage";
+import Login from "./screen/login";
+import { HashRouter, Routes, Route } from "react-router-dom";
+import { Userpage } from "./screen/userpage";
+import { Register } from "./screen/register";
+import UserReport from "./screen/UserReport";
+import BusAllocation from "./screen/busallowcate";
+import BusDataList from "./screen/busreport";
 
 function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+    <div>
+      <HashRouter>
+        <Routes>
+          <Route path="/" element={<Login />} />
+          <Route path="/register" element={<Register />} />
+          <Route path="/adminpage" element={<Adminpage />} />
+          <Route path="/userpage" element={<Userpage />} />
+          <Route path="/usereport" element={<UserReport />} />
+          <Route path="/busallowcate" element={<BusAllocation />} />
+          <Route path="/busdata" element={<BusDataList />} />
+        </Routes>
+      </HashRouter>
     </div>
   );
 }
